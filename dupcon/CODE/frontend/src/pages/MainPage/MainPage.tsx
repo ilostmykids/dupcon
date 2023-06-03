@@ -121,7 +121,7 @@ const MainPage = () => {
 
 		user.username ? 
 			<div className={classes.mainPage}>
-				<button onClick={() => dispatch(eraseUser())}>Sign out</button>
+				{/* <button onClick={() => dispatch(eraseUser())}>Sign out</button> */}
 				<div className={classes.sortingFiltering}>
 					<CustomCheckbox 
 					label='Sort' 
@@ -142,7 +142,7 @@ const MainPage = () => {
 
 				</div>
 				<div className={classes.remindersArea}>
-					<button onClick={() => navigate('/add')}>Add reminder</button>
+					<button className={classes.addButton} onClick={() => navigate('/add')}>Add reminder</button>
 					<div className={classes.searchControls}>
 						<input value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)}/>
 						<button onClick={() => {}}>Search</button>

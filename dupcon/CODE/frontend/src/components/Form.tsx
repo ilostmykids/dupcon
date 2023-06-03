@@ -36,7 +36,7 @@ const Form:FC<formProps> = ({onSubmit, variant}) => {
 		</div>
 		: null	
 		}
-		<button onClick={() => handleAccept()}>{variant}</button>
+		<button className={classes.acceptButton} onClick={() => handleAccept()}>{variant}</button>
 
 	</div>
   )

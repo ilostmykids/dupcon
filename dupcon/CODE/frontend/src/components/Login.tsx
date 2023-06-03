@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from "./Login.module.sass"
 import Form from './Form'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAppDispatch } from '../hooks/reduxHooks'
 import { UserCredential, getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { setUser } from '../redux/userSlice'
@@ -31,7 +31,11 @@ const Login = () => {
 
   return (
 	<div className={classes.login}>
+		<h1>Login</h1>
 		<Form onSubmit={loginHandler} variant='Login'/>
+		<div className={classes.redirect}>
+			New to site? <Link to='../register' className={classes.link}> Create an account</Link>
+		</div>
 	</div>
   )
 }

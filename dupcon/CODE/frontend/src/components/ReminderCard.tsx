@@ -13,13 +13,13 @@ const ReminderCard: FC<reminderCardProps> = ({ reminder }) => {
 	const navigate = useNavigate()
 
   return (
-	<div className={classes.reminderCard} onClick={() => navigate(`/info/${reminder.id}`)} style={{display: 'flex', border: '1px solid black', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
-		<h1>{reminder.label}</h1>
-		<textarea value={reminder.code}></textarea>
-		<p>{reminder.marks.join(' ')}</p>
+	<div className={classes.reminderCard}>
+		<h1 onClick={() => navigate(`/info/${reminder.id}`)}>{reminder.label}</h1>
+		<textarea value={reminder.code} disabled></textarea>
+		<p className={classes.marks}>Marks: <span className={classes.marksSpan}>{reminder.marks.join(' ')}</span></p>
 		<div className={classes.infoLine}>
-			<p>{getTimeLabel(parseInt(reminder.time))}</p>
-			<p>{reminder.language}</p>
+			<p>Created: <span className={classes.time}>{getTimeLabel(parseInt(reminder.time))}</span></p>
+			<p>Language: <span className={classes.language}>{reminder.language}</span></p>
 		</div>
 	</div>
   )
