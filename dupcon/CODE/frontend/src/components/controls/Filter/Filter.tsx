@@ -19,6 +19,7 @@ const Filter: FC<filterProps> = ({label, onChange, value}) => {
 				onChange={() => onChange(elem.label)}
 				checked={value[index].checked}
 				id={elem.label}
+				className={classes.checkbox}
 				/>
 				<label htmlFor={elem.label}>{elem.label}</label>
 			</div>

@@ -22,7 +22,7 @@ export const markOptions = [
 	{label: "Databases", checked: true}
 ]
 
-export const languageOptions = ["None", "Python", "C++", "JavaScript", "Java", "C#"]
+export const languageOptions = ["None", "Python", "C++", "JavaScript", "Java", "C#", "HTML", "CSS"]
 const languageInitialState = languageOptions.map(elem => ({label: elem, checked: true}))
 
 const MainPage = () => {
@@ -124,7 +124,7 @@ const MainPage = () => {
 				{/* <button onClick={() => dispatch(eraseUser())}>Sign out</button> */}
 				<div className={classes.sortingFiltering}>
 					<CustomCheckbox 
-					label='Sort' 
+					label='Sorting' 
 					options={sorterOptions}
 					setValue={setSorterValue}
 					value={sorterValue}
@@ -153,7 +153,7 @@ const MainPage = () => {
 				</div>
 
 			</div>
-		 : <Navigate to='login'/>
+		 : <Navigate to='../login'/>
 
   )
 }

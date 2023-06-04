@@ -10,7 +10,7 @@ const RegisterPage = () => {
 
   return (
 	user.username 
-	? <Navigate to='/'/>
+	? <Navigate to='/main'/>
 	: (<div className={classes.registerPage}>
 		<Register/>
 	  </div>)

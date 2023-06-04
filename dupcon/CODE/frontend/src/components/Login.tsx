@@ -19,7 +19,7 @@ const Login = () => {
 			uid: response.user.uid,
 			token: response.user.refreshToken
 		}));
-		navigate('/');
+		navigate('../main');
 	}
 
 	const loginHandler = (email: string, pass: string) => {

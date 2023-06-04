@@ -5,11 +5,18 @@ interface customInputProps{
 	type: string,
 	value: any,
 	onChange: any
+	id?: string
 }
 
-const CustomInput:FC<customInputProps> = ({type, value, onChange}) => {
+const CustomInput:FC<customInputProps> = ({type, value, onChange, id}) => {
   return (
-	<input className={classes.customInput} type={type} value={value} onChange={(event) => onChange(event.target.value)}/>
+	<input 
+	className={classes.customInput} 
+	type={type} 
+	value={value} 
+	onChange={(event) => onChange(event.target.value)}
+	id={id ? id : ''}
+	/>
   )
 }
 

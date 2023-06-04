@@ -15,7 +15,7 @@ const CustomCheckbox:FC<customCheckboxProps> = ({label, options, setValue, value
 
 		<div className={classes.options}>
 			{options.map(option => 
-			<div className={option}>
+			<div className={classes.option}>
 				<input
 				type='radio'
 				className={classes.radio}

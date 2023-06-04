@@ -6,6 +6,7 @@ import { checkboxValues } from '../MainPage/MainPage'
 import { nanoid } from '@reduxjs/toolkit'
 import { useAppSelector } from '../../hooks/reduxHooks'
 import { defaultSerializeQueryArgs } from '@reduxjs/toolkit/dist/query'
+import CustomInput from '../../components/CustomInput'
 
 interface addReminderPageProps{
   languageOptions: string[]
@@ -46,7 +47,7 @@ const ReminderControl:FC<addReminderPageProps> = ({languageOptions, markOptions,
     const data = new FormData()
     data.append('id', nanoid())
     data.append('uid', userId ? userId : '')
-    data.append('label', labelValue)
+    data.append('label', labelValue ? labelValue : 'Unnamed reminder')
     data.append('marks', marksValue.join('&'))
     data.append('time', time)
     data.append('language', languageValue)
@@ -69,28 +70,32 @@ const ReminderControl:FC<addReminderPageProps> = ({languageOptions, markOptions,
     .unwrap()
     
 
-    navigate('/')
+    navigate('../main')
     
   }
 
 
   return (
-	<div className={classes.addReminderPage}>
-    <div className={classes.addReminerArea}>
-      <div className={classes.labelArea}>
+	<div className={classes.reminderControlPage}>
+    <div className={classes.reminderControl}>
+      <div className={classes.labelLine}>
         <h1>Label</h1>
-        <input value={labelValue} onChange={(event) => setLabelValue(event.target.value)}/>
+        <input
+        type='text'
+        value={labelValue} 
+        onChange={(event: ChangeEvent<HTMLInputElement>) => setLabelValue(event.target.value)}
+        />
       </div>
-      <div className={classes.languageArea}>
+      <div className={classes.languageLine}>
         <h1>Language</h1>
         <select name="language" id="language" onChange={event => setLanguageValue(event.target.value)}>
           {languageOptions.map(option => <option value={option}>{option}</option>)}
         </select>
       </div>
-      <div className={classes.marksArea}>
+      <div className={classes.marksLine}>
         <h1>Marks</h1>
         {markOptions.map(option => <>
-          <input 
+        <input 
         type='checkbox' 
         id={option.label} 
         checked={marksValue.includes(option.label)}
@@ -101,13 +106,13 @@ const ReminderControl:FC<addReminderPageProps> = ({languageOptions, markOptions,
         </>
         )}
       </div>
-      <div className={classes.codeArea}>
+      <div className={classes.codeLine}>
           <textarea 
           value={codeValue} 
           onChange={event => setCodeValue(event.target.value)}></textarea>
       </div>
-      <div onClick={() => {}}>
-        {type === 'edit' ? <button onClick={() => handeEditClick(id ? id : ' ', labelValue, marksValue, languageValue, codeValue)}>Save</button> : <button onClick={() => handleSaveClick()}>Add</button>}
+      <div>
+        {type === 'edit' ? <button className={classes.acceptButton} onClick={() => handeEditClick(id ? id : ' ', labelValue, marksValue, languageValue, codeValue)}>Save</button> : <button className={classes.acceptButton} onClick={() => handleSaveClick()}>Add</button>}
       </div>
     </div>
   </div>

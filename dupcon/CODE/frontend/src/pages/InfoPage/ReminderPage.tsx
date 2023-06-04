@@ -32,7 +32,7 @@ const ReminderPage: FC = () => {
             <button onClick={() => navigate(-1)}>Back</button>
             <button onClick={() => navigate(`../edit/${data?.id}`)}>Edit</button>
           </div>
-          <button onClick={() => handleDeleteClick()}>Delete</button>
+          <button onClick={() => handleDeleteClick()} className={classes.deleteButton}>Delete</button>
         </div>
         <ReminderDisplay reminder={data}/>
     </div>

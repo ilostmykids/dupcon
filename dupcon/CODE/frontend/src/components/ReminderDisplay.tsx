@@ -23,7 +23,7 @@ const ReminderDisplay: FC<reminderDisplayProps> = ({reminder}) => {
 			<h1>Language</h1>
 			<p>{reminder.language}</p>
 		</div>
-		<div>
+		<div className={classes.marksLine}>
 			<h1>Marks</h1>
 			<p>{reminder.marks.join(', ')}</p>
 		</div>

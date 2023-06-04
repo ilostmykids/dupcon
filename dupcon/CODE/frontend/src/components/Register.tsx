@@ -18,7 +18,7 @@ const Register = () => {
 			uid: response.user.uid,
 			token: response.user.refreshToken
 		}));
-		navigate('/');
+		navigate('../main');
 	}
 
 	const registerHandler = (email: string, pass: string) => {

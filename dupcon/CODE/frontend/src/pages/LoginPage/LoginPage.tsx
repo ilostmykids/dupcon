@@ -10,7 +10,7 @@ const LoginPage = () => {
 
   return (
 		user.uid 
-		? <Navigate to='/'/>
+		? <Navigate to='/main'/>
 		: <div className={classes.loginPage}>
 			<Login/>
 		  </div>

@@ -1,0 +1,104 @@
+.reminderControlPage
+	display: flex
+	flex-direction: column
+	min-height: 100vh
+	width: 100%
+	background-color: #0d1117
+	align-items: center
+	font-family: "Jetbrains"
+
+.reminderControl
+	display: flex
+	flex-direction: column
+	background-color: #161b22
+	width: 90%
+	border-radius: 1em
+	color: #afafaf
+	box-sizing: border-box
+	padding: 1em 0
+	margin-bottom: 2em
+	margin: 2em 0
+	// min-height: 100vh
+
+.labelLine
+	margin-left: 2em
+	width: 90%
+	input
+		background-color: #0d1117
+		border: 1px solid #30363d
+		margin: 0
+		padding: 0
+		width: 20em
+		height: 2.5em
+		border-radius: 0.4em
+		color: white
+		padding: 0 0.5em
+		font-family: "Jetbrains"
+		&:focus	
+			outline: none
+			border-color: #2f79c8
+
+	
+.languageLine
+	margin-left: 2em
+	select
+		background-color: #0d1117
+		border: 1px solid #30363d
+		margin: 0
+		padding: 0
+		width: 20em
+		height: 2.5em
+		border-radius: 0.4em
+		color: white
+		padding: 0 0.5em
+		font-family: "Jetbrains"
+		&:focus	
+			outline: none
+			border-color: #2f79c8
+
+.marksLine
+	margin-left: 2em
+	input
+		width: 1.4em
+		height: 1.4em
+		margin-right: 0.3em
+		accent-color: #2f79c8
+		background-color: black
+	label
+		margin-right: 0.5em
+	
+.codeLine
+	margin: 1em 0 2em 2em
+	textarea
+		width: 93%
+		display: flex
+		
+		justify-self: center
+		background-color: #0d1117
+		color: white
+		min-height: 30em
+		resize: none
+		scrollbar-base-color: black
+		padding: 1em
+		border: 1px solid #30363d
+		border-radius: 1em
+		font-family: "Jetbrains"
+		font-size: 1em
+		&:focus
+			outline: none
+			border: 1px solid #2f79c8
+		&::-webkit-scrollbar
+			width: 0.4em
+			display: none
+
+.acceptButton
+	margin-left: 2em
+	height: 2.5em
+	width: 7em
+	border-radius: 1em
+	color: white
+	font-family: 'Jetbrains'
+	font-size: 1em
+	border: none
+	transition: all ease 0.3s
+	background-color: #2f79c8 
